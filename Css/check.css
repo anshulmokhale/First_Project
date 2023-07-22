@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); */
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-black: black;
+    --color-white: white;
+    --theme-color: #ED2647;
+    --theme-light-color: #FF5858;
+    --theme-light-color-2: #f16b6b;
+
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    /* Make the body fill the viewport height */
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    /* background-color: var(--theme-light-color); */
+}
+
+.navbar-brand {
+    padding-left: 1em;
+}
+
+#content {
+    opacity: 0;
+    /* Set initial opacity to 0 to make it invisible */
+    transition: opacity 1s ease;
+    /* Add a transition to the opacity property */
+}
+
+.centered-container {
+    display: flex;
+    width: 1000px;
+    border-radius: 20px;
+    /* Set the width of your div */
+    height: 550px;
+    /* Set the height of your div */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    /* background-color: #f1f1f1; */
+
+
+
+}
+
+/* Styles for the content that will fade in */
+
+
+/* CSS class to trigger the fade-in effect */
+
+
+.left {
+    height: 550px;
+    width: 50%;
+    background-color: var(--color-white);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#sig {
+    display: none;
+}
+
+.hd {
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.hd h1 {
+    font-size: 60px;
+    color: var(--theme-light-color);
+}
+
+/* .hd h5 {} */
+
+.subhd {
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+
+}
+
+.subhd h5 {
+    color: var(--theme-light-color);
+}
+
+.rigt {
+    height: 550px;
+    width: 50%;
+    background-color: var(--theme-light-color);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.rigt h2 {
+    padding-top: 1em;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    color: var(--color-white);
+
+}
+
+.rigt input {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid var(--color-white);
+
+    /* :placeholder {
+        color: var(--color-white);
+    } */
+}
+
+#sgin {
+    display: none;
+}
+
+
+::placeholder {
+    color: var(--color-white);
+    /* Change the color to your desired value */
+}
+
+.rigt input:active {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid var(--color-white);
+}
+
+
+
+.frm {
+    padding-top: 1em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.pading {
+    padding: 10px;
+}
+
+.pading input {
+    color: var(--color-white);
+    background-color: transparent;
+    outline: none;
+    font-family: 'Lato', sans-serif;
+
+}
+
+.Email input {
+    width: 390px;
+}
+
+
+.email input {
+    width: 300px;
+}
+
+.email button {
+    padding: 5px;
+    outline: none;
+    /* border: 2px solid var(--color-white); */
+    border: none;
+
+    background-color: var(--theme-light-color);
+    border-radius: 5px;
+    color: var(--color-white);
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+.dte {
+    color: var(--color-white);
+    font-family: 'Lato', sans-serif;
+
+}
+
+.addr input {
+    width: 390px;
+}
+
+.pass input {
+    margin-bottom: 10px;
+    width: 390px;
+
+}
+
+#verify {
+    padding-top: 10px;
+    width: 140px;
+}
+
+.butn button {
+    padding: 5px;
+    border: 2px solid var(--color-white);
+    background-color: var(--theme-light-color);
+    border-radius: 5px;
+    color: var(--color-white);
+    font-family: 'Lato', sans-serif;
+
+}
+
+.butn button:hover {
+    background-color: var(--color-white);
+    color: var(--theme-light-color);
+}
+
+.Sign_up {
+    display: none;
+}
+
+@media (max-width:1100px) {
+    .centered-container {
+        width: 900px;
+    }
+
+    .hd h1 {
+        font-size: 50px;
+    }
+
+    #myForm {
+        height: 206px;
+        width: 350px;
+    }
+
+    .frm {
+        /* padding-top: 3em; */
+        height: 400px;
+        width: 450px;
+    }
+
+    .email input {
+        width: 286px;
+    }
+
+    .pass input {
+        width: 286px;
+
+    }
+}
+
+@media (max-width:950px) {
+    .centered-container {
+        width: 750px;
+        height: 500px;
+    }
+
+    .left {
+        height: 500px;
+    }
+
+    .rigt {
+        height: 500px;
+    }
+
+    .hd h1 {
+        font-size: 40px;
+    }
+
+    .subhd h5 {
+        font-size: 20px;
+    }
+
+    #myForm {
+        height: 206px;
+        width: 350px;
+    }
+
+    .frm {
+        /* padding-top: 3em; */
+        height: 400px;
+        width: 450px;
+    }
+
+    .email input {
+        width: 286px;
+    }
+
+    .pass input {
+        width: 286px;
+
+    }
+}
+
+@media (max-width:900px) {
+    .centered-container {
+        width: 700px;
+        height: 450px;
+    }
+
+    .left {
+        height: 450px;
+    }
+
+    .rigt {
+        height: 450px;
+    }
+
+    .hd {
+        height: 300px;
+    }
+
+    .hd h1 {
+        font-size: 30px;
+    }
+
+    .subhd h5 {
+        font-size: 17px;
+    }
+
+    #myForm {
+        height: 106px;
+        width: 250px;
+    }
+
+    .frm {
+        /* padding-top: 3em; */
+        height: 215px;
+        width: 350px;
+    }
+
+    .email input {
+        font-size: 13px;
+        width: 220px;
+    }
+
+    .pass input {
+        font-size: 13px;
+
+        width: 220px;
+
+    }
+
+    .butn button {
+        font-size: 15px;
+    }
+}
+
+@media (max-width:720px) {
+    .navbar-brand img {
+        width: 140px;
+        height: 20px;
+    }
+
+    .centered-container {
+        width: 600px;
+        height: 420px;
+    }
+
+    .left {
+        height: 420px;
+    }
+
+    .rigt {
+        height: 420px;
+    }
+
+    .hd {
+        height: 250px;
+    }
+
+    .hd h1 {
+        font-size: 25px;
+    }
+
+    .subhd h5 {
+        font-size: 15px;
+    }
+
+    #myForm {
+        height: 106px;
+        width: 250px;
+    }
+
+    .frm {
+        /* padding-top: 3em; */
+        height: 215px;
+        width: 350px;
+    }
+
+    .email input {
+        font-size: 15px;
+        width: 220px;
+    }
+
+    .pass input {
+        font-size: 15px;
+
+        width: 220px;
+
+    }
+
+    .butn button {
+        font-size: 15px;
+    }
+}
+
+@media (max-width:650px) {
+    .centered-container {
+        display: block;
+        width: 400px;
+        border-radius: 20px;
+        /* Set the width of your div */
+        height: 600px;
+        /* Set the height of your div */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        /* background-color: #f1f1f1; */
+
+
+
+    }
+
+    .left {
+        width: 400px;
+        height: 300px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 20px;
+    }
+
+    .rigt {
+        width: 400px;
+        height: 300px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .hd {
+        height: 200px;
+    }
+
+    #myForm {
+        height: 150px;
+        width: 250px;
+    }
+
+    .frm {
+        /* padding-top: 3em; */
+        height: 180px;
+        width: 400px;
+    }
+
+    .hd h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width:400px) {
+    .centered-container {
+        width: 350px;
+        height: 600px;
+
+
+    }
+
+    .left {
+        width: 350px;
+        height: 300px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 20px;
+    }
+
+    .rigt {
+        width: 350px;
+        height: 300px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .hd {
+        height: 200px;
+    }
+
+    #myForm {
+        height: 150px;
+        width: 250px;
+    }
+
+    .frm {
+        /* padding-top: 3em; */
+        height: 180px;
+        width: 400px;
+    }
+
+    .hd h1 {
+        font-size: 30px;
+    }
+}
