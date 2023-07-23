@@ -11,7 +11,8 @@ require '../Connection/connection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----------------------------------------------- bootstrap css -------------------------------------->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <!------------------------------------------------ custom css ---------------------------------------->
     <link rel="stylesheet" href="../Css/shop.css">
@@ -33,17 +34,19 @@ require '../Connection/connection.php';
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav ">
                         <a class="nav-link" href="#">Prescription</a>
-                        <a class="nav-link" href="../Log/check.html">Sign up/Log in</a>
-                        <!-- <a class="nav-link" href="../Log/singin.php">Log in</a> -->
+                        <a class="nav-link" href="../Log/signup.php">Sign up</a>
+                        <a class="nav-link" href="../Log/singin.php">Log in</a>
                     </div>
 
                 </div>
-                <a class="btn  justify-content-end libtn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <a class="btn  justify-content-end libtn" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                    role="button" aria-controls="offcanvasExample">
                     <h4><i class="bi bi-list"></i></h4>
                 </a>
             </div>
         </nav>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">Go To</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -58,10 +61,10 @@ require '../Connection/connection.php';
                             <a class="nav-li" href="#">Prescription </a>
                         </li>
                         <li class="nav-it">
-                            <a class="nav-li" href="../Log/check.html">Sign up/Log in</a>
+                            <a class="nav-li" href="../Log/signup.php">Sign up</a>
                         </li>
                         <li class="nav-it">
-                            <!-- <a class="nav-li" href="../Log/singin.php">Log in</a> -->
+                            <a class="nav-li" href="../Log/singin.php">Log in</a>
                         </li>
                     </ul>
                 </div>
@@ -133,7 +136,8 @@ require '../Connection/connection.php';
                 <div class="crd">
                     <div class="row brd">
                         <div class="img-col">
-                            <a href="#"><img src="../img/capsule.jpg" style="height: 150px; width: 150px;" alt="injection bottle"></a>
+                            <a href="#"><img src="../img/capsule.jpg" style="height: 150px; width: 150px;"
+                                    alt="injection bottle"></a>
                         </div>
                         <div class="col">
                             <h5>Injection bottle</h5>
@@ -148,7 +152,8 @@ require '../Connection/connection.php';
                 <div class="crd">
                     <div class="row brd">
                         <div class="img-col">
-                            <a href="#"><img src="../img/meftal_spas_tablet_10s_581482_1_2.jpg" style="height: 150px; width: 150px;" alt="injection bottle"></a>
+                            <a href="#"><img src="../img/meftal_spas_tablet_10s_581482_1_2.jpg"
+                                    style="height: 150px; width: 150px;" alt="injection bottle"></a>
                         </div>
                         <div class="col">
                             <h5>Meftal Spas</h5>
@@ -168,7 +173,7 @@ require '../Connection/connection.php';
     <!--------------------------------------------------- custom js -------------------------------------->
     <!-- <script src="../Js/App.js"></script> -->
     <script type="text/javascript">
-        window.addEventListener("scroll", function() {
+        window.addEventListener("scroll", function () {
             var sec = document.getElementById("cate");
             var dcc = document.getElementById("secton");
             sec.classList.toggle('sticky', window.scrollY > 40)
@@ -191,7 +196,9 @@ require '../Connection/connection.php';
         }
     </script>
     <!----------------------------------------------- bootstrap js ----------------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 
     <!-------------------------------------------fontawesom kit ------------------------------------->
     <script src="https://kit.fontawesome.com/bf3a18cfbc.js" crossorigin="anonymous"></script>
