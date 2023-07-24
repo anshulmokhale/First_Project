@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- custom css  -->
     <link rel="stylesheet" href="../Css/signin.css">
@@ -29,7 +31,8 @@
         <div class="rigt">
             <h2>Log in</h2>
             <div class="frm">
-                <form action="#" method="post" id="myForm">
+                <form action="#" method="post" id="loginForm">
+                    <div id="response"></div>
                     <div class="email pading">
                         <input type="email" name="email" id="email" placeholder="Enter Email" required>
                     </div>
@@ -48,13 +51,39 @@
 
 
     <script>
-        window.onload = function() {
-            document.getElementById("myForm").reset();
+        window.onload = function () {
+            document.getElementById("loginForm").reset();
         };
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             const content = document.getElementById('content');
             content.style.opacity = 1; // Set opacity to 1 to trigger the fade-in effect
         });
+        $("#loginForm").submit(function (event) {
+            event.preventDefault();
+            var loginData = {
+                email: $("#email").val(),
+                password: $("#password").val()
+            };
+
+            $.ajax({
+                url: 'login_form.php',
+                type: 'POST',
+                dataType: "json",
+                data: JSON.stringify(loginData),
+                contentType: 'application/json',
+                success: function (response) {
+                    if (response.message == "login") {
+                        window.location.href = response.redirect;
+                    } else {
+                        $("#response").html(response.message);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    $("#response").html("Error: " + error);
+                }
+            });
+        });
+
     </script>
 </body>
 

@@ -178,6 +178,8 @@ h2 {
 }
 
 
+
+
 .email input {
     width: 390px;
 }
@@ -192,9 +194,19 @@ h2 {
 
 }
 
+.db label {
+    color: var(--color-white);
+    font-family: 'Lato', sans-serif;
+
+}
 
 .pass input {
     margin-bottom: 10px;
+    width: 390px;
+
+}
+
+.addr input {
     width: 390px;
 
 }

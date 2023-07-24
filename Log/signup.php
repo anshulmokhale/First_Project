@@ -1,9 +1,3 @@
-<?php
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +41,7 @@
                     <div class="email pading">
                         <div id="emailForm">
                             <!-- <label for="email">Email:</label> -->
-                            <input type="email" id="email" name="email" placeholder="enter email">
+                            <input type="email" id="email" name="email" placeholder="Enter email">
                             <button type="button" id="sendCodeBtn">Send Verification Code</button>
                             <br><span id="response"></span>
                             <div id="verificationDiv" style="display: none;">
@@ -60,22 +54,29 @@
                     </div>
                     <div class="name pading">
                         <input type="text" name="name" id="name" placeholder="Name" required>
-                        <input type="text" name="Sname" id="Sname" placeholder="Surname" required>
+                        <input type="text" name="surname" id="surname" placeholder="Surname" required>
+                    </div>
+                    <div class="db pading">
+                        <label for="date">Enter DOB :</label>
+                        <input type="date" name="date" id="date" placeholder="Date">
+                    </div>
+                    <div class="addr pading">
+                        <input type="text" name="address" id="address" placeholder="Enter Your Address">
                     </div>
                     <div class="pass pading">
-                        <input type="password" name="password-1" id="password" placeholder="Enter password" required>
+                        <input type="text" name="password_2" id="password_1" placeholder="Enter password" required>
                         <br>
-                        <input type="password" name="password-2" placeholder="Re enter password" required>
+                        <input type="password" name="password_2" id="password_2" placeholder="Re enter password"
+                            required>
                     </div>
+                    <br><span id="passConfirm"></span>
                     <div class="butn pading">
-                        <button type="submit" name="signup"> Sign up</button>
+                        <button type="submit" name="signup" id="signup"> Sign up</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-
     <script>
         window.onload = function () {
             document.getElementById("myForm").reset();
@@ -160,9 +161,59 @@
                     }
                 });
             });
+            $("#password_1, #password_2").on("input", function () {
+                var pass1 = $("#password_1").val();
+                var pass2 = $("#password_2").val();
+
+                if (pass1 === pass2) {
+                    $("#response").html(""); // Clear any previous error message
+                } else {
+                    $("#response").html("Please enter both passwords correctly.");
+                }
+            });
+
+            $("#myForm").submit(function (event) {
+                event.preventDefault();
+
+                // Check if the passwords match before submitting the form
+                var pass1 = $("#password_1").val();
+                var pass2 = $("#password_2").val();
+
+                if (pass1 !== pass2) {
+                    $("#response").html("Please enter both passwords correctly.");
+                    return;
+                }
+
+                // Proceed with form submission using AJAX
+                var signupData = {
+                    name: $("#name").val(),
+                    surname: $("#surname").val(),
+                    email: $("#email").val(),
+                    date: $("#date").val(),
+                    address: $("#address").val(),
+                    password: pass1
+                };
+
+                $.ajax({
+                    url: "signup_form.php",
+                    type: "POST",
+                    dataType: "json",
+                    data: JSON.stringify(signupData),
+                    contentType: "application/json",
+                    success: function (response) {
+                        if (response.message === "Signup successful") {
+                            window.location.href = response.redirect;
+                        } else {
+                            $("#response").html(response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        $("#response").html("Error: " + error);
+                    }
+                });
+            });
         });
     </script>
-
 
 </body>
 

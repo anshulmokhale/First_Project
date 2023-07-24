@@ -95,7 +95,7 @@ require '../Connection/connection.php';
             <ul class="cat-lst">
                 <?php
                 $q = "select * from category";
-                $result = $conn->query($q);
+                $result = $connection->query($q);
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $pg = $row["cat-name"];
