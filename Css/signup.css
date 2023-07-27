@@ -200,6 +200,10 @@ h2 {
 
 }
 
+.db span {
+    color: var(--color-white);
+}
+
 .pass input {
     margin-bottom: 10px;
     width: 390px;
@@ -227,6 +231,20 @@ h2 {
 }
 
 .butn button:hover {
+    background-color: var(--color-white);
+    color: var(--theme-light-color);
+}
+
+.butn a {
+    text-decoration: none;
+    color: var(--color-white);
+    padding: 5px;
+    border: 2px solid var(--color-white);
+    border-radius: 5px;
+
+}
+
+.butn a:hover {
     background-color: var(--color-white);
     color: var(--theme-light-color);
 }

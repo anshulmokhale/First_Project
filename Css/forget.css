@@ -183,6 +183,14 @@ h2 {
 
 }
 
+#forget {
+
+    height: 206px;
+    width: 410px;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
 
 .email input {
     width: 390px;
@@ -198,7 +206,14 @@ h2 {
 
 }
 
-
+#forget_password {
+    display: none;
+    height: 206px;
+    width: 410px;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
 
 .pass input {
     margin-bottom: 10px;

@@ -41,7 +41,7 @@ if (password_verify($password, $deta['password'])) {
     $response = array(
         'status' => 'Success',
         'message' => 'login',
-        'redirect' => '../Dashboard/dashboard.php'
+        'redirect' => '../Shopping/Shop.php'
     );
     http_response_code(201);
 } else {

@@ -46,8 +46,8 @@
 }
 
 .container-fluid img {
-    height: 20px;
-    width: 130px;
+    height: 25px;
+    width: 160px;
 }
 
 .navbar-nav {
@@ -55,6 +55,16 @@
     z-index: 10000;
     overflow: visible;
 
+}
+
+.pre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-link i {
+    font-size: 30px;
 }
 
 .nav-link:hover {
@@ -92,6 +102,7 @@
     text-decoration: none;
 
 }
+
 
 .nav-li:hover {
     padding: 4px;

@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
-    <!-- ==============================jquery link=========================================================== -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <!-- custom css  -->
-    <link rel="stylesheet" href="../Css/signup.css">
-    <title>Sign up</title>
+    <link rel="stylesheet" href="../Css/forget.css">
+    <title>Sign in</title>
 </head>
 
 <body>
@@ -20,24 +19,21 @@
         <div class="left">
             <nav class="navbar">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="../Shopping/Shop.php"><img src="../img/logo.png" alt="mamta medical"
-                            height="30px" width="180px"></a>
+                    <a class="navbar-brand" href="../Shopping/Shop.php"><img src="../img/logo.png"
+                            alt="mamta medical"></a>
                 </div>
             </nav>
             <div class="hd">
-                <!-- <h1>Welcome</h1> -->
-                <img src="../img/6310506.svg" alt="" height="450px" width="450px">
-
-
+                <h1>Welcome Back</h1>
             </div>
             <div class="subhd">
-                <h5>Sign Up to get access</h5>
+                <h5>Log in to get access</h5>
             </div>
         </div>
         <div class="rigt">
-            <h2>Sign Up</h2>
+            <h2>Forget Password</h2>
             <div class="frm">
-                <form action="#" method="post" id="myForm">
+                <form action="#" method="post" id="forget">
                     <div class="email pading">
                         <div id="emailForm">
                             <!-- <label for="email">Email:</label> -->
@@ -52,65 +48,44 @@
                             <!-- <div id="response"></div> -->
                         </div>
                     </div>
-                    <div class="name pading">
-                        <input type="text" name="name" id="name" placeholder="Name" required>
-                        <input type="text" name="surname" id="surname" placeholder="Surname" required>
-                    </div>
-                    <div class="db pading">
-                        <label for="date">Enter DOB :</label>
-                        <input type="date" name="date" id="date" placeholder="Date" required>
-                    </div>
-                    <div class="db pading">
-                        <label for="gender" required>Select Gender:</label>
-                        <input type="radio" name="gender" id="gender" value="Male"><span> Male </span>
-                        <input type="radio" name="gender" id="gender" value="Female"><span> Female </span>
-                        <input type="radio" name="gender" id="gender" value="Other"><span> Other </span>
-
-                        <br><span id="error"></span>
-
-                    </div>
-                    <div class="addr pading">
-                        <input type="text" name="address" id="address" placeholder="Enter Your Address">
-                    </div>
                     <div class="pass pading">
-                        <input type="text" name="password_2" id="password_1" placeholder="Enter password" required>
-                        <br>
-                        <input type="password" name="password_2" id="password_2" placeholder="Re enter password"
-                            required>
+                        <input type="password" id="password_1" name="password" placeholder="enter new password">
+                        <input type="password" id="password_2" name="password" placeholder="re-enter the password">
                     </div>
-                    <br><span id="passConfirm"></span>
                     <div class="butn pading">
-                        <button type="submit" name="signup" id="signup"> Sign up</button>
-                        <a href="login.php"> Already an user, login here</a>
+                        <button type="submit" name="forget"> Log in </button>
                     </div>
+
+
+                    <!-- <div class="g-signin2" onclick="onSignIn()">
+                        <h5><i class="bi bi-google"></i></h5>
+                    </div> -->
                 </form>
             </div>
         </div>
     </div>
+
+
+
     <script>
         window.onload = function () {
-            document.getElementById("myForm").reset();
+            document.getElementById("forget").reset();
         };
         window.addEventListener('load', function () {
             const content = document.getElementById('content');
             content.style.opacity = 1; // Set opacity to 1 to trigger the fade-in effect
         });
-        var w1 = document.getElementById("sendCodeBtn");
-        var w2 = document.getElementById("wait");
 
-        function hdi() {
-            w1.style.display = "none";
-            w2.style.display = "inline";
-        }
         $(document).ready(function () {
-            var emailVerified = false;
+            var emailVerified;
+            var pass;
 
             $("#sendCodeBtn").click(function () {
                 var email = $("#email").val().trim();
 
                 // Check if the email is empty
                 if (!email) {
-                    $("#response").html("! Please enter your email address.");
+                    $("#response").html("Please enter your email address.");
                     return;
                 }
 
@@ -126,8 +101,8 @@
                         $("#wait").show();
                     },
                     success: function (response) {
-                        $("#response").html("code sended");
-                        if (response == "success") {
+                        $("#response").html("Verification code sent");
+                        if (response === "success") {
                             emailVerified = false; // Reset emailVerified on successful code sending
                             $("#verificationDiv").show();
                         } else {
@@ -150,7 +125,7 @@
                 var email = $("#email").val();
                 var verificationCode = $("#verification_code").val();
                 $.ajax({
-                    url: "verify_code.php",
+                    url: "forget_verify.php",
                     type: "POST",
                     data: { email: email, verification_code: verificationCode },
                     success: function (response) {
@@ -171,67 +146,54 @@
                     }
                 });
             });
+
             $("#password_1, #password_2").on("input", function () {
                 var pass1 = $("#password_1").val();
                 var pass2 = $("#password_2").val();
 
                 if (pass1 === pass2) {
                     $("#response").html(""); // Clear any previous error message
+                    pass = pass1;
                 } else {
                     $("#response").html("Please enter both passwords correctly.");
                 }
             });
 
-            $("#myForm").submit(function (event) {
-                event.preventDefault();
+            $("#forget").submit(function (event) {
+                event.preventDefault(); // Prevent the default form submission
 
-
-                // Check if the passwords match before submitting the form
-                var pass1 = $("#password_1").val();
-                var pass2 = $("#password_2").val();
-
-                if (pass1 !== pass2) {
-                    $("#response").html("Please enter both passwords correctly.");
+                // Check if the email is verified before submitting the form
+                if (!emailVerified) {
+                    $("#response").html("Please verify your email first.");
                     return;
                 }
-                var gender = $("input[name='gender']:checked").val();
 
-                // Proceed with form submission using AJAX
-                var signupData = {
-                    name: $("#name").val(),
-                    surname: $("#surname").val(),
+                var data = {
                     email: $("#email").val(),
-                    date: $("#date").val(),
-                    gender: gender,
-                    address: $("#address").val(),
-                    password: pass1
+                    password: pass
                 };
-                if (gender) {
-                    $.ajax({
-                        url: "signup_form.php",
-                        type: "POST",
-                        dataType: "json",
-                        data: JSON.stringify(signupData),
-                        contentType: "application/json",
-                        success: function (response) {
-                            if (response.message === "Signup successful") {
-                                window.location.href = response.redirect;
-                            } else {
-                                $("#response").html(response.message);
-                            }
-                        },
-                        error: function (xhr, status, error) {
-                            $("#response").html("Error: " + error);
+                $.ajax({
+                    url: 'forget_back.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json', // Corrected the typo here
+                    success: function (response) {
+                        if (response.message == "successfull") {
+                            window.location.href = response.redirect;
+                        } else if (response.message == "email") {
+                            $("#response").html(response.msg);
+                        } else {
+                            $("#response").html(response.msg);
                         }
-                    });
-                }
-                else {
-                    $("#error").html("please select the gender");
-                }
+                    },
+                    error: function (xhr, status, error) {
+                        $("#response").html("Error: " + error);
+                    }
+                });
             });
         });
     </script>
-
 </body>
 
 </html>

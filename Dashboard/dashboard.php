@@ -8,6 +8,7 @@ session_start();
 if (isset($_SESSION['user_id'])) {
     // User is signed in, display dashboard content
     echo "Welcome, " . $_SESSION['user_id'];
+    echo '<a href="../Log/logout.php"> logout</a>';
 } else {
     // User is not signed in, redirect to login page or display an error message
     header('Location: ../Log/signup.php'); // Redirect to the login page

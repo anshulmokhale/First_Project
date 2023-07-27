@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../Connection/connection.php';
 ?>
 
@@ -33,9 +34,18 @@ require '../Connection/connection.php';
                 </button> -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav ">
-                        <a class="nav-link" href="#">Prescription</a>
-                        <a class="nav-link" href="../Log/signup.php">Sign up</a>
-                        <a class="nav-link" href="../Log/singin.php">Log in</a>
+                        <a class="nav-link pre" href="#">Prescription</a>
+                        <?php
+
+                        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                            // User is logged in, show the user icon
+                            echo '<a class="nav-link " href="../Dashboard/dashboard.php"><i class="bi bi-person-circle"></i></a>';
+                        } else {
+                            // User is not logged in, show signup and signin buttons
+                            echo '<a class="nav-link" href="../Log/signup.php">Sign up</a>
+                              <a class="nav-link" href="../Log/login.php">Log in</a>';
+                        }
+                        ?>
                     </div>
 
                 </div>
@@ -60,12 +70,23 @@ require '../Connection/connection.php';
                         <li class="nav-it">
                             <a class="nav-li" href="#">Prescription </a>
                         </li>
-                        <li class="nav-it">
+                        <?php
+
+                        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                            echo '<li class="nav-it">
+                            <a class="nav-li il" href="../Dashboard/dashboard.php"><i class="bi bi-person-circle"></i></a>
+                        </li>';
+                        } else {
+                            echo '
+                            <li class="nav-it">
                             <a class="nav-li" href="../Log/signup.php">Sign up</a>
                         </li>
                         <li class="nav-it">
-                            <a class="nav-li" href="../Log/singin.php">Log in</a>
-                        </li>
+                            <a class="nav-li" href="../Log/login.php">Log in</a>
+                        </li>';
+
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>
@@ -82,7 +103,7 @@ require '../Connection/connection.php';
                         <button class="btn btn-outline-success bt1" type="submit">Search</button>
                         <button class="btn  bt2" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
-                    <a class="navbar-brand" onclick="show_btn()" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a class="navbar-brand" onclick="" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
             </nav>
         </div>

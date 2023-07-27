@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <!-- custom css  -->
     <link rel="stylesheet" href="../Css/signin.css">
@@ -18,7 +19,8 @@
         <div class="left">
             <nav class="navbar">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" alt="mamta medical"></a>
+                    <a class="navbar-brand" href="../Shopping/Shop.php"><img src="../img/logo.png"
+                            alt="mamta medical"></a>
                 </div>
             </nav>
             <div class="hd">
@@ -39,9 +41,18 @@
                     <div class="pass pading">
                         <input type="password" name="password" id="password" placeholder="Enter password" required>
                     </div>
+                    <div class="frget">
+                        <a href="forget.php" id="forget">Forget Password</a>
+                    </div>
                     <div class="butn pading">
                         <button type="submit" name="login"> Log in </button>
+                        <a href="signup.php"> New User Signup</a>
+
                     </div>
+
+                    <!-- <div class="g-signin2" onclick="onSignIn()">
+                        <h5><i class="bi bi-google"></i></h5>
+                    </div> -->
                 </form>
             </div>
         </div>
@@ -58,6 +69,9 @@
             const content = document.getElementById('content');
             content.style.opacity = 1; // Set opacity to 1 to trigger the fade-in effect
         });
+
+
+
         $("#loginForm").submit(function (event) {
             event.preventDefault();
             var loginData = {

@@ -20,13 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com'; // Your SMTP server host
         $mail->SMTPAuth = true;
-        $mail->Username = ''; // Your SMTP username
-        $mail->Password = ''; // Your SMTP password
+        $mail->Username = 'mamtamedical0001@gmail.com'; // Your SMTP username
+        $mail->Password = 'ashhomgknzvoxvln'; // Your SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption
         $mail->Port = 587; // Your SMTP server port
 
         // Recipients
-        $mail->setFrom('', ''); // Your sender email and name
+        $mail->setFrom('mamtamedical0001@gmail.com', 'Mamta Medical'); // Your sender email and name
         $mail->addAddress($email); // Recipient's email
 
         // Email content
