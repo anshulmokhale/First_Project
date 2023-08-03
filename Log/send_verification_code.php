@@ -32,7 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Email content
         $mail->isHTML(true);
         $mail->Subject = 'Email Verification Code';
-        $mail->Body = 'Your verification code: ' . $verificationCode;
+        $mail->Body = 'Your verification code: ' . $verificationCode . '<br><br>'
+            . 'If you are facing any issues while entering this verification code, please refresh the page and start with a new code.';
+
 
         $mail->send();
 

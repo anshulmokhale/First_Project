@@ -1,3 +1,8 @@
+<?php
+
+$version = time();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +15,7 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <!-- custom css  -->
-    <link rel="stylesheet" href="../Css/forget.css">
+    <link rel="stylesheet" href="../Css/forget.css?v=<?= $version ?>">
     <title>Sign in</title>
 </head>
 
@@ -24,7 +29,7 @@
                 </div>
             </nav>
             <div class="hd">
-                <h1>Welcome Back</h1>
+                <img src="../img/Forget.svg" alt="">
             </div>
             <div class="subhd">
                 <h5>Log in to get access</h5>

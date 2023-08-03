@@ -1,3 +1,7 @@
+<?php
+
+$version = time();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- custom css  -->
-    <link rel="stylesheet" href="../Css/signup.css">
+    <link rel="stylesheet" href="../Css/signup.css?v=<?= $version ?>">
     <title>Sign up</title>
 </head>
 
@@ -26,7 +30,7 @@
             </nav>
             <div class="hd">
                 <!-- <h1>Welcome</h1> -->
-                <img src="../img/6310506.svg" alt="" height="450px" width="450px">
+                <img src="../img/6310506.svg" alt="">
 
 
             </div>

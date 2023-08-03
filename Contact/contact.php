@@ -7,7 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <!-- custom css -->
     <link rel="stylesheet" href="../Css/contact.css?v=<?= $version ?>">
@@ -30,7 +31,8 @@
             <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#Home" aria-current="page">Contact us</a>
-                    <a class="btn  justify-content-end" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    <a class="btn  justify-content-end" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                        role="button" aria-controls="offcanvasExample">
                         <h4><i class="bi bi-list"></i></h4>
                     </a>
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -39,7 +41,7 @@
                                 <a class="nav-link" href="../index.html">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../Shopping/Shop.php">Shop</a>
+                                <a class="nav-link" href="../Shopping/Shop.php">Shopping</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Prescription</a>
@@ -50,7 +52,8 @@
             </nav>
 
             <!-------------------------------------------- Menu bar content  --------------------------------------------------------->
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasExampleLabel">Go To</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -94,12 +97,15 @@
                         <h5><i class="bi bi-telephone-fill"></i> 8766865573</h5>
                     </li>
                     <li>
-                        <h5><i class="bi bi-geo-alt-fill"></i> Mamta Medical, 1 Sswangi, Meghe, Wardha, Maharashtra 442001</h5>
+                        <h5><i class="bi bi-geo-alt-fill"></i> Mamta Medical, 1 Sswangi, Meghe, Wardha, Maharashtra
+                            442001</h5>
                     </li>
                 </ul>
             </div>
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d749.4841128730205!2d78.5814667694891!3d20.725278053122718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd47f79189f826f%3A0x4077ce684035dd0b!2sMamta%20Medical!5e1!3m2!1sen!2sin!4v1689166740157!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d749.4841128730205!2d78.5814667694891!3d20.725278053122718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd47f79189f826f%3A0x4077ce684035dd0b!2sMamta%20Medical!5e1!3m2!1sen!2sin!4v1689166740157!5m2!1sen!2sin"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
             </div>
         </div>
@@ -149,13 +155,13 @@
                 try {
                     $mail->isSMTP();
                     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
-                    $mail->SMTPAuth   = true;
-                    $mail->Host       = 'smtp.gmail.com';
+                    $mail->SMTPAuth = true;
+                    $mail->Host = 'smtp.gmail.com';
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-                    $mail->Port       = 465;
+                    $mail->Port = 465;
 
-                    $mail->Username   = 'mamtamedical0001@gmail.com';
-                    $mail->Password   = 'ashhomgknzvoxvln';
+                    $mail->Username = 'mamtamedical0001@gmail.com';
+                    $mail->Password = 'ashhomgknzvoxvln';
 
                     $mail->setFrom($email, $name);
                     $mail->addAddress('mamtamedical0001@gmail.com');
@@ -215,7 +221,9 @@
 
 
     <!-- boot strap script  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
 </body>
 

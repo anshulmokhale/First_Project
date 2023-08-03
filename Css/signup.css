@@ -79,9 +79,10 @@ body {
     font-family: 'Roboto Slab', serif;
 }
 
-.hd h1 {
-    font-size: 60px;
-    color: var(--theme-light-color);
+
+.hd img {
+    height: 450px;
+    width: 450px;
 }
 
 /* .hd h5 {} */
@@ -144,7 +145,6 @@ body {
 }
 
 .frm {
-    padding-top: 1em;
     margin: 0;
     display: flex;
     align-items: center;
@@ -247,4 +247,408 @@ h2 {
 .butn a:hover {
     background-color: var(--color-white);
     color: var(--theme-light-color);
+}
+
+
+/* code for responsive */
+
+@media (max-width:1100px) {
+    .centered-container {
+        width: 850px;
+        border-radius: 20px;
+        height: 550px;
+    }
+
+    .left {
+        height: 550px;
+        width: 50%;
+    }
+
+    .hd {
+
+        height: 400px;
+
+    }
+
+    .hd img {
+        height: 410px;
+        width: 410px;
+    }
+
+    #myForm {
+        width: 345px;
+    }
+
+    .name input {
+        width: 160px;
+    }
+
+    .email input {
+        width: 325px;
+
+    }
+
+    .addr input {
+        width: 325px;
+    }
+
+    .pass input {
+        width: 325px;
+
+    }
+
+
+}
+
+@media (max-width:870px) {
+    .centered-container {
+        width: 700px;
+        border-radius: 20px;
+        height: 500px;
+    }
+
+    .left {
+        height: 500px;
+        width: 50%;
+    }
+
+    .rigt {
+        height: 500px;
+        width: 50%;
+    }
+
+    .hd {
+
+        height: 360px;
+
+    }
+
+    .hd img {
+        height: 340px;
+        width: 340px;
+    }
+
+    #myForm {
+        width: 300px;
+    }
+
+    .pading {
+        padding: 5px;
+    }
+
+    .name input {
+        width: 135px;
+    }
+
+    .email input {
+        width: 280px;
+
+    }
+
+    .addr input {
+        width: 280px;
+
+    }
+
+    .pass input {
+        width: 280px;
+
+
+    }
+
+}
+
+@media (max-width:720px) {
+    body {
+        height: 1000px;
+    }
+
+    .centered-container {
+        display: block;
+        width: 500px;
+        border-radius: 20px;
+        height: auto;
+    }
+
+    .left {
+        height: 50%;
+        width: 500px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .rigt {
+
+        height: 50%;
+        width: 500px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 20px;
+    }
+
+    .hd {
+
+        height: 360px;
+
+    }
+
+    .hd img {
+        height: 340px;
+        width: 340px;
+    }
+
+    #myForm {
+        width: 400px;
+    }
+
+    .pading {
+        padding: 5px;
+    }
+
+    .name input {
+        width: 188px;
+    }
+
+    .email input {
+        width: 380px;
+
+    }
+
+    .addr input {
+        width: 380px;
+
+    }
+
+    .pass input {
+        width: 380px;
+
+
+    }
+
+    .butn {
+        padding-bottom: 1em;
+    }
+}
+
+@media (max-width:520px) {
+    body {
+        height: 1000px;
+    }
+
+    .centered-container {
+        display: block;
+        width: 400px;
+        border-radius: 20px;
+        height: auto;
+    }
+
+    .left {
+        height: 50%;
+        width: 400px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .rigt {
+
+        height: 50%;
+        width: 400px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 20px;
+    }
+
+    .hd {
+
+        height: 350px;
+
+    }
+
+    .hd img {
+        height: 350px;
+        width: 350px;
+    }
+
+    #myForm {
+        width: 350px;
+    }
+
+    .pading {
+        padding: 5px;
+    }
+
+    .name input {
+        width: 165px;
+    }
+
+    .email input {
+        width: 340px;
+
+    }
+
+    .addr input {
+        width: 340px;
+
+    }
+
+    .pass input {
+        width: 340px;
+
+
+    }
+
+    .butn {
+        padding-bottom: 1em;
+    }
+}
+
+@media (max-width:410px) {
+    body {
+        height: 1000px;
+    }
+
+    .centered-container {
+        display: block;
+        width: 345px;
+        border-radius: 20px;
+        height: auto;
+    }
+
+    .left {
+        height: 50%;
+        width: 345px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .rigt {
+
+        height: 50%;
+        width: 345px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 20px;
+    }
+
+    .hd {
+
+        height: 350px;
+
+    }
+
+    .hd img {
+        height: 330px;
+        width: 330px;
+    }
+
+    #myForm {
+        width: 330px;
+    }
+
+    .pading {
+        padding: 5px;
+    }
+
+    .name input {
+        width: 150px;
+    }
+
+    .email input {
+        width: 310px;
+
+    }
+
+    .addr input {
+        width: 310px;
+
+    }
+
+    .pass input {
+        width: 310px;
+
+
+    }
+
+    .butn {
+
+        padding-bottom: 1em;
+    }
+}
+
+@media (max-width:340px) {
+    body {
+        height: 1000px;
+    }
+
+    .centered-container {
+        display: block;
+        width: 280px;
+        border-radius: 20px;
+        height: auto;
+    }
+
+    .left {
+        height: 50%;
+        width: 280px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .rigt {
+
+        height: 50%;
+        width: 280px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 20px;
+    }
+
+    .hd {
+
+        height: 350px;
+
+    }
+
+    .hd img {
+        height: 280px;
+        width: 280px;
+    }
+
+    #myForm {
+        width: 250px;
+    }
+
+    .pading {
+        padding: 5px;
+    }
+
+    .name input {
+        width: 115px;
+    }
+
+    .email input {
+        width: 240px;
+
+    }
+
+    .addr input {
+        width: 240px;
+
+    }
+
+    .pass input {
+        width: 240px;
+
+
+    }
+
+    .butn {
+
+        padding-bottom: 1em;
+    }
+
+    .butn button {
+        display: block;
+    }
+
+    .butn a {
+        margin-top: 5px;
+        display: block;
+    }
 }

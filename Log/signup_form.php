@@ -7,8 +7,6 @@ require '../Connection/connection.php';
 $requestBody = file_get_contents('php://input');
 $data = json_decode($requestBody, true);
 
-
-
 if (!$connection) {
     die("Database connection error: " . mysqli_connect_error());
 }
@@ -46,6 +44,26 @@ if (!$connection) {
     exit;
 }
 
+// Check if the email is already registered
+$checkQuery = "SELECT email FROM users WHERE email = ?";
+$stmt = mysqli_prepare($connection, $checkQuery);
+mysqli_stmt_bind_param($stmt, "s", $email);
+mysqli_stmt_execute($stmt);
+$res = mysqli_stmt_get_result($stmt);
+
+if (mysqli_num_rows($res) > 0) {
+    // The email is already registered
+    $response = array(
+        'status' => 'error',
+        'message' => 'Email is already registered'
+    );
+    // http_response_code(409); // Conflict
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    exit;
+}
+
+// If the email is not registered, proceed with signup
 $query = "INSERT INTO `users` (`id`, `name`, `surname`, `date_of_birth`, `address`, `email`, `password`, `type`) VALUES (NULL, '$name','$surname','$date','$address','$email','$password','0')";
 
 if (mysqli_query($connection, $query)) {
@@ -69,6 +87,9 @@ if (mysqli_query($connection, $query)) {
     // Log the database error for debugging purposes
     error_log('MySQL Error: ' . mysqli_error($connection));
 }
+
+// Close the prepared statement
+mysqli_stmt_close($stmt);
 
 // Send response back to the client
 header('Content-Type: application/json');

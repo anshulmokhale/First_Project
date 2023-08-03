@@ -26,7 +26,7 @@ $password = $data['password'];
 if (!$connection) {
     die("Database connection error: " . mysqli_connect_error());
 }
-$q = "SELECT `email` , `password` FROM `users` WHERE `email` = '{$email}'";
+$q = "SELECT `name` , `surname` , `password` FROM `users` WHERE `email` = '{$email}'";
 
 $result = mysqli_query($connection, $q);
 
@@ -35,7 +35,7 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 if (password_verify($password, $deta['password'])) {
-    $_SESSION['user_id'] = $email;
+    $_SESSION['user_id'] = $deta['name'] . " " . $deta['surname'];
 
     $_SESSION['loggedin'] = true;
     $response = array(

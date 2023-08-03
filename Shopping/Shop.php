@@ -1,6 +1,8 @@
 <?php
 session_start();
 require '../Connection/connection.php';
+
+$version = time();
 ?>
 
 
@@ -16,7 +18,7 @@ require '../Connection/connection.php';
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <!------------------------------------------------ custom css ---------------------------------------->
-    <link rel="stylesheet" href="../Css/shop.css">
+    <link rel="stylesheet" href="../Css/shop.css?v=<?= $version ?>">
     <title> Shopping</title>
 </head>
 
@@ -39,7 +41,9 @@ require '../Connection/connection.php';
 
                         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                             // User is logged in, show the user icon
-                            echo '<a class="nav-link " href="../Dashboard/dashboard.php"><i class="bi bi-person-circle"></i></a>';
+                            echo '<a class="nav-link pre" href="../Dashboard/dashboard.php"><i class="bi bi-person-circle"></i>';
+                            echo " " . $_SESSION['user_id'] . '</a>';
+
                         } else {
                             // User is not logged in, show signup and signin buttons
                             echo '<a class="nav-link" href="../Log/signup.php">Sign up</a>
@@ -73,9 +77,10 @@ require '../Connection/connection.php';
                         <?php
 
                         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-                            echo '<li class="nav-it">
-                            <a class="nav-li il" href="../Dashboard/dashboard.php"><i class="bi bi-person-circle"></i></a>
-                        </li>';
+                            echo '<li class="nav-it">';
+                            echo '<a class="nav-li il" href="../Dashboard/dashboard.php"><i class="bi bi-person-circle"></i>';
+                            echo $_SESSION['user_id'] . '</a>';
+                            echo '</li>';
                         } else {
                             echo '
                             <li class="nav-it">

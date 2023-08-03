@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customer Location</title>
+</head>
+
+<body>
+    <h1>Customer Location</h1>
+    <p>Click the button to get your location:</p>
+    <button onclick="getLocation()">Get Location</button>
+    <p id="dataDisplay"></p>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            // Redirect to a PHP page and pass the latitude and longitude as URL parameters
+            document.getElementById("dataDisplay").innerHTML = "save_location.php?lat=" + latitude + "&lng=" + longitude;
+        }
+    </script>
+</body>
+
+</html>
