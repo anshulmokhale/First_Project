@@ -36,6 +36,7 @@ if (mysqli_num_rows($result) > 0) {
 
 if (password_verify($password, $deta['password'])) {
     $_SESSION['user_id'] = $deta['name'] . " " . $deta['surname'];
+    $_SESSION['email'] = $email;
 
     $_SESSION['loggedin'] = true;
     $response = array(

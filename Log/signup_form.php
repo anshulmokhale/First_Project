@@ -67,7 +67,8 @@ if (mysqli_num_rows($res) > 0) {
 $query = "INSERT INTO `users` (`id`, `name`, `surname`, `date_of_birth`, `address`, `email`, `password`, `type`) VALUES (NULL, '$name','$surname','$date','$address','$email','$password','0')";
 
 if (mysqli_query($connection, $query)) {
-    $_SESSION['user_id'] = $email;
+    $_SESSION['user_id'] = $deta['name'] . " " . $deta['surname'];
+    $_SESSION['email'] = $email;
     $_SESSION['loggedin'] = true;
 
     $response = array(

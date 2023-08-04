@@ -1,4 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=REM&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 
 * {
     padding: 0;
@@ -34,11 +36,17 @@ body {
     z-index: 10;
 }
 
+.navbar {
+    background-color: #ecf0f1;
+
+}
+
 .main {
-    margin-left: 70px;
+    margin-left: 90px;
     height: 100%;
     margin-top: 50px;
-    padding: 10px 50px;
+    padding: 10px 30px;
+    font-family: 'Roboto Slab', serif;
 }
 
 #sidebarMenu {
@@ -81,6 +89,7 @@ body {
     text-decoration: none;
     text-align: center;
     color: #fff;
+    font-family: 'REM', sans-serif;
 }
 
 .container-fluid a {
@@ -98,4 +107,131 @@ body {
 .navbar-brand img {
     height: 25px;
     width: 160px;
+}
+
+.imge h1 {
+    font-size: 50px;
+
+}
+
+.user {
+
+    display: block;
+}
+
+.imge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imge img {
+    height: 230px;
+    width: 230px;
+}
+
+.user-details {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    margin: auto;
+
+}
+
+.nm {
+    width: 300px;
+}
+
+.val {
+    width: 300px;
+}
+
+.hed {
+    display: block;
+    font-size: 20px;
+}
+
+.user-info {
+    display: none;
+}
+
+@media (max-width:760px) {
+    .imge img {
+        height: 170px;
+        width: 170px;
+    }
+
+    .user-details {
+        width: 400px;
+    }
+
+    .nm {
+        width: 200px;
+    }
+
+    .val {
+        width: 200px;
+    }
+
+    .hed {
+
+        font-size: 15px;
+    }
+}
+
+@media (max-width:560px) {
+    .imge img {
+        height: 130px;
+        width: 130px;
+    }
+
+    .user-details {
+        width: 300px;
+    }
+
+    .nm {
+        width: 150px;
+    }
+
+    .val {
+        width: 150px;
+    }
+
+    .hed {
+
+        font-size: 15px;
+    }
+}
+
+@media (max-width:480px) {
+    .user-details {
+        /* width: 250px; */
+        width: 322px;
+    }
+
+    .nm {
+        width: 100px;
+    }
+
+    .val {
+        width: 222px;
+    }
+
+    .hed {
+
+        font-size: 15px;
+    }
+}
+
+@media (max-width:420px) {
+    .user-details {
+        display: none;
+    }
+
+    .user-info {
+        display: block;
+        text-align: center;
+    }
 }

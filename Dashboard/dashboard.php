@@ -1,14 +1,45 @@
 <?php
 session_start();
+include '../Connection/connection.php';
+
 
 if (isset($_SESSION['user_id'])) {
     // User is signed in, display dashboard content
+
+    $name = $_SESSION['user_id'];
+    $email = $_SESSION['email'];
+
+
+    $q = "SELECT `date_of_birth`, `address` FROM `users` WHERE `email` = '{$email}'";
+
+    $result = $connection->query($q);
+
+    if (mysqli_num_rows($result) > 0) {
+        while ($rows = $result->fetch_assoc()) {
+            $date = $rows['date_of_birth'];
+            $address = $rows['address'];
+        }
+    }
 
 } else {
     // User is not signed in, redirect to login page or display an error message
     header('Location: ../Log/login.php'); // Redirect to the login page
     exit;
 }
+
+function calculateAge($birthdate)
+{
+    $today = new DateTime();
+    $birthDate = new DateTime($birthdate);
+
+    $age = $today->diff($birthDate)->y;
+
+    return $age;
+}
+
+// Example birthdate in YYYY-MM-DD format
+$age = calculateAge($date);
+$version = time();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,14 +49,14 @@ if (isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../Css/dashboard.css">
+    <link rel="stylesheet" href="../Css/dashboard.css?v=<?= $version ?>">
 </head>
 
 <body>
     <div class="header">
-        <nav class="navbar bg-white">
+        <nav class="navbar">
             <div class="container-fluid">
-                <a class="navbar-brand"><img src="../img/logo.png" alt=""></a>
+                <a class="navbar-brand" href="../Shopping/Shop.php"><img src="../img/logo.png" alt=""></a>
                 <a class="d-flex" href="#">
                     <h4><i class="bi bi-bell"></i></h4>0
                 </a>
@@ -45,7 +76,7 @@ if (isset($_SESSION['user_id'])) {
                     <h3><i class="bi bi-receipt-cutoff"></i></h3>Prescription history
                 </a></li>
             <li><a href="#">
-                    <h3><i class="bi bi-clock-history"></i></h3>Order history
+                    <h3><i class="bi bi-clock-history"></i></h3>My orders
                 </a></li>
             <li><a href="../Contact/contact.php">
                     <h3><i class="bi bi-info-circle"></i></h3>Help
@@ -56,24 +87,64 @@ if (isset($_SESSION['user_id'])) {
         </ul>
     </div>
     <div class="main">
-        <?php
-        echo "<h1>Welcome, " . $_SESSION['user_id'] . "</h1>";
-        ?>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, eum quia? Quaerat qui ab vitae culpa quis
-            quasi. Veniam impedit sunt labore ab voluptate accusamus tempora iusto vel molestiae quod magni totam
-            assumenda, natus doloremque odit laborum nostrum? Illum est facere cumque assumenda non pariatur delectus
-            fugiat eveniet tempore quae qui, voluptates quod cupiditate laborum harum nesciunt minus commodi at modi in
-            autem. Iste adipisci dolores, voluptate eius itaque animi provident veritatis laudantium numquam eum,
-            explicabo libero rem ut blanditiis necessitatibus odio, quo labore qui beatae. Veritatis debitis facilis
-            perferendis sunt quaerat quo cumque sequi odit quidem beatae veniam, nulla, quae velit voluptatum neque
-            ratione asperiores ipsa excepturi deserunt! Fuga distinctio voluptas voluptatem totam veniam rem esse minima
-            voluptatibus sapiente, culpa nemo hic, rerum fugit, voluptate dolorum inventore animi laudantium laboriosam
-            doloremque? Sapiente eos nostrum accusamus quam suscipit dicta illum? Excepturi ipsum, placeat velit tenetur
-            numquam nam, expedita eligendi, eum dignissimos debitis est libero dolorem. Quos repellat aperiam, sint
-            nesciunt consequatur non itaque hic ut, vitae ea natus perferendis. Magnam, sequi optio quod nemo nobis
-            aspernatur debitis reprehenderit corporis, odit exercitationem totam quo cupiditate possimus necessitatibus
-            quidem nulla ab assumenda eaque. Dolores cupiditate necessitatibus quod minus ipsam reiciendis, asperiores
-            velit.</p>
+        <h1>Welcome,</h1>
+        <div class="user">
+            <div class="imge">
+                <img src="../img/male.png" alt="Imgae">
+            </div>
+
+            <div class="user-details">
+                <div class="nm">
+                    <p><strong class="hed">User Name:</strong></p>
+                    <p><strong class="hed">Email:</strong></p>
+                    <p><strong class="hed">Age:</strong></p>
+                    <p><strong class="hed">Date of Birth:</strong></p>
+                    <p><strong class="hed">Address:</strong></p>
+                </div>
+                <div class="val">
+                    <p class="hed">
+                        <?php echo "$name"; ?>
+                    </p>
+                    <p class="hed">
+                        <?php echo "$email"; ?>
+                    </p>
+                    <p class="hed">
+                        <?php echo "$age"; ?>
+                    </p>
+                    <p class="hed">
+                        <?php echo "$date"; ?>
+                    </p>
+                    <p class="hed">
+                        <?php echo "$address"; ?>
+                    </p>
+                </div>
+
+            </div>
+            <div class="user-info">
+                <p><strong class="hed">User Name:</strong></p>
+                <p class="hed">
+                    <?php echo "$name"; ?>
+                </p>
+                <p><strong class="hed">Email:</strong></p>
+                <p class="hed">
+                    <?php echo "$email"; ?>
+                </p>
+                <p><strong class="hed">Age:</strong></p>
+                <p class="hed">
+                    <?php echo "$age"; ?>
+                </p>
+                <p><strong class="hed">Date of Birth:</strong></p>
+                <p class="hed">
+                    <?php echo "$date"; ?>
+                </p>
+                <p><strong class="hed">Address:</strong></p>
+                <p class="hed">
+                    <?php echo "$address"; ?>
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
 
 
