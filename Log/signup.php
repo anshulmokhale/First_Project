@@ -198,7 +198,7 @@ $version = time();
                     $("#response").html("Please enter both passwords correctly.");
                     return;
                 }
-                var gender = $("input[name='gender']:checked").val();
+                var gende = $("input[name='gender']:checked").val();
 
                 // Proceed with form submission using AJAX
                 var signupData = {
@@ -206,7 +206,7 @@ $version = time();
                     surname: $("#surname").val(),
                     email: $("#email").val(),
                     date: $("#date").val(),
-                    gender: gender,
+                    gender: gende,
                     address: $("#address").val(),
                     password: pass1
                 };
@@ -218,7 +218,7 @@ $version = time();
                         data: JSON.stringify(signupData),
                         contentType: "application/json",
                         success: function (response) {
-                            if (response.message === "Signup successful") {
+                            if (response.message == "Signup") {
                                 window.location.href = response.redirect;
                             } else {
                                 $("#response").html(response.message);

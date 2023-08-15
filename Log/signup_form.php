@@ -28,6 +28,7 @@ $email = $data['email'];
 $name = $data['name'];
 $surname = $data['surname'];
 $date = $data['date'];
+$gender = $data['gender'];
 $address = $data['address'];
 $password = password_hash($data['password'], PASSWORD_BCRYPT);
 
@@ -64,19 +65,18 @@ if (mysqli_num_rows($res) > 0) {
 }
 
 // If the email is not registered, proceed with signup
-$query = "INSERT INTO `users` (`id`, `name`, `surname`, `date_of_birth`, `address`, `email`, `password`, `type`) VALUES (NULL, '$name','$surname','$date','$address','$email','$password','0')";
+$query = "INSERT INTO `users` (`id`, `name`, `surname`, `date_of_birth`, `gender` , `address`, `email`, `password`, `type`) VALUES (NULL, '$name','$surname','$date','$gender','$address','$email','$password','0')";
 
 if (mysqli_query($connection, $query)) {
-    $_SESSION['user_id'] = $deta['name'] . " " . $deta['surname'];
+    $_SESSION['user_id'] = $data['name'] . " " . $data['surname'];
     $_SESSION['email'] = $email;
     $_SESSION['loggedin'] = true;
 
     $response = array(
         'status' => 'success',
-        'message' => 'Signup successful',
+        'message' => 'Signup',
         'redirect' => '../Dashboard/dashboard.php'
-    );
-    http_response_code(201); // Created
+    ); // Created
 } else {
     // Database query execution error
     $response = array(

@@ -20,6 +20,54 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.shop {
+    display: flex;
+    background-color: var(--theme-light-color);
+}
+
+.shopImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+
+}
+
+.shopImg img {
+    height: 500px;
+    width: 400px;
+}
+
+.shopHead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.shopHead h1 {
+
+    color: var(--white-color);
+}
+
+.shopHead a {
+    margin-top: 10px;
+    text-decoration: none;
+    padding: 5px;
+    color: var(--white-color);
+    border: 2px solid var(--white-color);
+}
+
+.shopHead a:hover {
+    color: var(--theme-light-color);
+    background-color: var(--white-color);
+
+}
+
+
+
 .Holding {
     display: flex;
     padding: 1em 1em;
@@ -128,6 +176,11 @@ body {
     .btn {
         display: block;
     }
+
+    .shopImg img {
+        height: 400px;
+        width: 300px;
+    }
 }
 
 @media (max-width:800px) {
@@ -163,8 +216,64 @@ body {
     }
 }
 
+@media (max-width:720px) {
+    .shopImg img {
+        height: 350px;
+        width: 250px;
+    }
+}
+
+@media (max-width:550px) {
+
+    .shop {
+        display: block;
+        background-color: var(--theme-light-color);
+    }
+
+    .shopImg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+    }
+
+    .shopImg img {
+        height: 300px;
+        width: 300px;
+    }
+
+    .shopHead {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .shopHead h1 {
+
+        color: var(--white-color);
+    }
+
+    .shopHead a {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        padding: 5px;
+        color: var(--white-color);
+
+    }
+}
 
 @media (max-width:300px) {
+    .shopImg img {
+        height: 200px;
+        width: 200px;
+    }
+
     .im img {
         width: 200px;
         height: 25px;
