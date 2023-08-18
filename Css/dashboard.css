@@ -104,8 +104,7 @@ body {
 }
 
 .DDs {
-
-    background-color: var(--theme-light-color);
+    background-color: #ecf0f1;
     display: flex;
     height: 50px;
     width: 100%;
@@ -123,7 +122,8 @@ body {
 }
 
 .DDs a {
-    color: var(--color-white);
+    /* color: var(--color-white); */
+    color: var(--theme-light-color);
     text-decoration: none;
     text-align: center;
     width: 70px;
@@ -132,6 +132,7 @@ body {
 }
 
 .Ds a:hover {
+    color: var(--color-white);
     border-radius: 5px;
     background-color: var(--theme-light-color);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -152,7 +153,7 @@ body {
 .men {
 
     display: flex;
-    margin-top: 58px;
+    margin-top: 60px;
     width: auto;
     height: 100vh;
     font-family: 'Roboto Slab', serif;
@@ -225,124 +226,3 @@ tr.image img {
 }
 
 /* responsives queries */
-
-@media (max-width:1140px) {
-    table {
-        width: 700px;
-    }
-}
-
-@media (max-width:990px) {
-    table {
-        width: 600px;
-    }
-}
-
-@media (max-width:860px) {
-    table {
-        width: 500px;
-    }
-}
-
-@media (max-width:760px) {
-    .NO {
-        display: none;
-    }
-
-    .YES {
-        display: block;
-    }
-
-    table {
-        width: 340px;
-        text-align: center;
-    }
-
-    .info {
-        width: 75%;
-    }
-
-    .buton {
-        width: 25%;
-    }
-
-
-
-}
-
-@media (max-width:680px) {
-    .info {
-        width: 70%;
-    }
-
-    .buton {
-        width: 30%;
-    }
-
-    table {
-        width: 300px;
-    }
-}
-
-@media (max-width:550px) {
-    table {
-        width: 280px
-    }
-}
-
-@media (max-width:500px) {
-    .Txt {
-        font-size: 13px;
-    }
-
-    #sidebarMenu {
-        width: 85px;
-        margin-top: 55px;
-
-    }
-
-    .h3 {
-        font-size: 30px;
-    }
-
-    .men {
-        display: block;
-
-    }
-
-    .info {
-        width: 100%;
-    }
-
-    .buton {
-        width: 100%;
-    }
-
-    table {
-        width: 250px;
-    }
-
-}
-
-@media (max-width:350px) {
-    /* table {
-        width: 230px;
-    } */
-
-    .Txt {
-        display: none;
-    }
-
-    #sidebarMenu {
-        width: 55px;
-        margin-top: 55px;
-
-    }
-
-
-
-    td,
-    tr {
-        width: 200px;
-    }
-}

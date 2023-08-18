@@ -62,31 +62,33 @@ $version = time();
                 </a>
 
             </div>
+
         </nav>
     </div>
-    <div id="sidebarMenu">
-        <ul class="menu">
-            <li><a href="#">
-                    <h3><i class="bi bi-person-circle"></i></h3> <span class="Txt">Account</span>
-                </a></li>
-            <li><a href="#">
-                    <h3><i class="fa-regular fa-calendar-check"></i></h3> <span class="Txt">Appointment history</span>
-                </a></li>
-            <li><a href="#">
-                    <h3><i class="bi bi-receipt-cutoff"></i></h3> <span class="Txt">Prescription history</span>
-                </a></li>
-            <li><a href="#">
-                    <h3><i class="bi bi-clock-history"></i></h3> <span class="Txt">My orders</span>
-                </a></li>
-            <li><a href="../Contact/contact.php">
-                    <h3><i class="bi bi-info-circle"></i></h3> <span class="Txt">Help</span>
-                </a></li>
-            <li><a href="../Log/logout.php">
-                    <h3><i class="bi bi-power"></i></h3> <span class="Txt">Logout</span>
-                </a></li>
-        </ul>
+    <div class="DDs">
+        <div class="Ds"><a href="#">
+                <h3><i class="bi bi-person-circle"></i></h3>
+            </a>
+        </div>
+        <div class="Ds"><a href="#">
+                <h3><i class="fa-regular fa-calendar-check"></i></h3>
+            </a></div>
+        <div class="Ds"><a href="#">
+                <h3><i class="bi bi-receipt-cutoff"></i></h3>
+            </a></div>
+        <div class="Ds"><a href="#">
+                <h3><i class="bi bi-clock-history"></i></h3>
+            </a></div>
+        <div class="Ds"><a href="../Contact/contact.php">
+                <h3><i class="bi bi-info-circle"></i></h3>
+            </a></div>
+        <div class="Ds"><a href="../Log/logout.php">
+                <h3><i class="bi bi-power"></i></h3>
+            </a></div>
     </div>
+
     <div class="men">
+
         <div class="info">
             <h1>Account Information</h1>
             <div class="data">
@@ -97,23 +99,33 @@ $version = time();
                     </tr>
                     <tr>
                         <td><strong>Email</strong></td>
-                        <td><?php echo "$email"; ?></td>
+                        <td>
+                            <?php echo "$email"; ?>
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>Age</strong></td>
-                        <td><?php echo "$age"; ?></td>
+                        <td>
+                            <?php echo "$age"; ?>
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>Date of Birth</strong></td>
-                        <td><?php echo "$date"; ?></td>
+                        <td>
+                            <?php echo "$date"; ?>
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>Gender</strong></td>
-                        <td><?php echo "$gender"; ?></td>
+                        <td>
+                            <?php echo "$gender"; ?>
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>Address</strong></td>
-                        <td><?php echo "$address"; ?></td>
+                        <td>
+                            <?php echo "$address"; ?>
+                        </td>
                     </tr>
                 </table>
                 <table class="YES">
@@ -125,38 +137,49 @@ $version = time();
                         <td><strong>Email</strong></td>
                     </tr>
                     <tr>
-                        <td><?php echo "$email"; ?></td>
+                        <td>
+                            <?php echo "$email"; ?>
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>Age</strong></td>
                     </tr>
                     <tr>
-                        <td><?php echo "$age"; ?></td>
+                        <td>
+                            <?php echo "$age"; ?>
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>Date of Birth</strong></td>
                     </tr>
                     <tr>
-                        <td><?php echo "$date"; ?></td>
+                        <td>
+                            <?php echo "$date"; ?>
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>Gender</strong></td>
                     </tr>
                     <tr>
-                        <td><?php echo "$gender"; ?></td>
+                        <td>
+                            <?php echo "$gender"; ?>
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>Address</strong></td>
                     </tr>
                     <tr>
-                        <td><?php echo "$address"; ?></td>
+                        <td>
+                            <?php echo "$address"; ?>
+                        </td>
                     </tr>
                 </table>
             </div>
         </div>
         <div class="buton">
+            <a href="#">Update detail</a>
+            <a href="#">Change Password</a>
             <a href="#">Delete Account</a>
-            <a href="#">Add detail</a>
         </div>
     </div>
 
