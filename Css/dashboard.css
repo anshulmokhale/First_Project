@@ -39,6 +39,9 @@ body {
 
 .navbar {
     background-color: #ecf0f1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+
 
 }
 
@@ -49,22 +52,6 @@ body {
     padding: 10px 30px;
     font-family: 'Roboto Slab', serif;
 } */
-
-#sidebarMenu {
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 110px;
-    margin-top: 55px;
-    background-color: var(--theme-light-color);
-    padding-top: 1em;
-}
-
-#sidebarMenu ul {
-    padding-left: 0px;
-    list-style: none;
-}
 
 .h3 {
     font-size: 50px;
@@ -116,11 +103,56 @@ body {
     width: 160px;
 }
 
+.DDs {
+
+    background-color: var(--theme-light-color);
+    display: flex;
+    height: 50px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0;
+    position: fixed;
+    z-index: 1999;
+    padding: 3px 7px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.DDs a {
+    color: var(--color-white);
+    text-decoration: none;
+    text-align: center;
+    width: 70px;
+    z-index: 2000;
+
+}
+
+.Ds a:hover {
+    border-radius: 5px;
+    background-color: var(--theme-light-color);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.Ds {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Ds h3 {
+    text-align: center;
+}
+
 .men {
 
     display: flex;
     margin-top: 58px;
-    margin-left: 110px;
     width: auto;
     height: 100vh;
     font-family: 'Roboto Slab', serif;
@@ -138,6 +170,17 @@ body {
     text-align: center;
 }
 
+.buton a {
+    border: 2px solid var(--theme-light-color);
+    color: var(--theme-light-color);
+    text-decoration: none;
+    padding: 3px;
+}
+
+.buton a:hover {
+    background-color: var(--theme-light-color);
+    color: var(--color-white);
+}
 
 table {
     margin-top: 50px;
@@ -146,6 +189,11 @@ table {
     border-radius: 10px;
     background-color: var(--theme-light-color);
     color: var(--color-white);
+}
+
+table:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    /* Apply shadow on hover */
 }
 
 td,
@@ -161,12 +209,86 @@ tr.image img {
 
 
 .buton {
+    display: flex;
+    flex-direction: column;
     width: 20%;
+    align-items: center;
+    /* justify-content: center; */
 }
 
+.buton a {
+    margin-top: 100px;
+}
+
+.YES {
+    display: none;
+}
+
+/* responsives queries */
+
+@media (max-width:1140px) {
+    table {
+        width: 700px;
+    }
+}
+
+@media (max-width:990px) {
+    table {
+        width: 600px;
+    }
+}
+
+@media (max-width:860px) {
+    table {
+        width: 500px;
+    }
+}
+
+@media (max-width:760px) {
+    .NO {
+        display: none;
+    }
+
+    .YES {
+        display: block;
+    }
+
+    table {
+        width: 340px;
+        text-align: center;
+    }
+
+    .info {
+        width: 75%;
+    }
+
+    .buton {
+        width: 25%;
+    }
 
 
 
+}
+
+@media (max-width:680px) {
+    .info {
+        width: 70%;
+    }
+
+    .buton {
+        width: 30%;
+    }
+
+    table {
+        width: 300px;
+    }
+}
+
+@media (max-width:550px) {
+    table {
+        width: 280px
+    }
+}
 
 @media (max-width:500px) {
     .Txt {
@@ -181,5 +303,46 @@ tr.image img {
 
     .h3 {
         font-size: 30px;
+    }
+
+    .men {
+        display: block;
+
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .buton {
+        width: 100%;
+    }
+
+    table {
+        width: 250px;
+    }
+
+}
+
+@media (max-width:350px) {
+    /* table {
+        width: 230px;
+    } */
+
+    .Txt {
+        display: none;
+    }
+
+    #sidebarMenu {
+        width: 55px;
+        margin-top: 55px;
+
+    }
+
+
+
+    td,
+    tr {
+        width: 200px;
     }
 }
